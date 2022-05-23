@@ -1,0 +1,294 @@
+#answer1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer3 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer4 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer5 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer6 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer7 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer8 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer9 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#answer10 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blueviolet;
+    top: 90%;
+}
+#hajimeru1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    top: 79%;
+}
+#player {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    bottom: 5%;
+    right: 1%;
+}
+#text1 {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 50px;
+}
+#text2 {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    top: 55%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px
+    
+}
+#text3 {
+    position: absolute;
+    width: 240px;
+    height: 40px;
+    bottom: 10%;
+    left: 40px;
+    text-align: center;
+    font-size: 9px
+    
+}
+#level {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    font-size: 60px
+}
+#level1 {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    font-size: 60px
+}
+#level2 {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    font-size: 60px
+}
+#level3 {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 900;
+    color: rgb(175, 0, 0);
+    font-size: 60px
+}
+#mondai {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 900;
+    color: orange;
+    border-color: black;
+    border: 3px;
+    font-family: 'Georgia';
+    font-size: 80px
+}
+#countdown {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    top: 10%;
+}
+#maru1 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-color: black;
+    left: 43px;
+    top: 6%;
+}
+#maru2 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 76px;
+    border-color: black;
+    top: 6%;
+}
+#maru3 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 109px;
+    border-color: black;
+    top: 6%;
+}
+#maru4 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 142px;
+    border-color: black;
+    top: 6%;
+}
+#maru5 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 175px;
+    border-color: black;
+    top: 6%;
+}
+#maru6 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 203px;
+    border-color: black;
+    top: 6%;
+}
+#maru7 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 236px;
+    border-color: black;
+    top: 6%;
+}
+#maru8 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 269px;
+    border-color: black;
+    top: 6%;
+}
+#maru9 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 302px;
+    border-color: black;
+    top: 6%;
+}
+#maru10 {
+    position: absolute; 
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    left: 335px;
+    border-color: black;
+    top: 6%;
+}
+#clear {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 900;
+    color: rgb(255, 225, 0);
+    border-color: black;
+    border: 3px;
+    font-size: 80px
+}

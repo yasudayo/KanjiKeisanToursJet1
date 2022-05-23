@@ -1,0 +1,790 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+        }
+
+        stage {
+            width: 180vmin;
+            height: 90vmin;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="style.css">
+    <div id="text1">漢字・計算ツアーズジェット</div>
+    <div id="text2">※ 送り仮名の入力は不正解です。</div>
+    <div id="text3">音楽提供/魔王魂様・アオサキ様・蛍原ゆうき様</div>
+    <div id="level"></div>
+    <div id="level1"></div>
+    <div id="level2"></div>
+    <div id="level3"></div>
+    <div id="clear"></div>
+    <div id="mondai"></div>
+    <img src="countdown5.png" width="600" height="700" id="countdown">
+    <input type="text" id="answer1">
+    <input type="text" id="answer2">
+    <input type="text" id="answer3">
+    <input type="text" id="answer4">
+    <input type="text" id="answer5">
+    <input type="text" id="answer6">
+    <input type="text" id="answer7">
+    <input type="text" id="answer8">
+    <input type="text" id="answer9">
+    <input type="text" id="answer10">
+    <input type="button" id="hajimeru1" value="START" onclick="hajimeru()">
+    <input type="image" id="player" src="1.png" width="900" height="600">
+    <input type="text" id="maru1" value="1" width="35" height="35">
+    <input type="text" id="maru2" value="2" width="35" height="35">
+    <input type="text" id="maru3" value="3" width="35" height="35">
+    <input type="text" id="maru4" value="4" width="35" height="35">
+    <input type="text" id="maru5" value="5" width="35" height="35">
+    <input type="text" id="maru6" value="6" width="35" height="35">
+    <input type="text" id="maru7" value="7" width="35" height="35">
+    <input type="text" id="maru8" value="8" width="35" height="35">
+    <input type="text" id="maru9" value="9" width="35" height="35">
+    <input type="text" id="maru10" value="10" width="35" height="35">
+    <script src="main2.js"></script>
+</body>
+<script>
+    let se1 = new Audio("se1.mp3");
+    let se2 = new Audio("爆発.mp3");
+    let hu = new Audio("hu.mp3");
+    const toi1mondais = ["暗号", "12+10", "警笛", "30×3", "脳裏"];
+    const toi1mondai = Math.floor(Math.random() * toi1mondais.length);
+    const toi2mondais = ["93÷3", "玄関", "21-4", "御茶ノ水", "皐月"];
+    const toi2mondai = Math.floor(Math.random() * toi2mondais.length);
+    const toi3mondais = ["林檎", "源頼朝", "77+26-9", "鞄", "49×8"];
+    const toi3mondai = Math.floor(Math.random() * toi3mondais.length);
+    const toi4mondais = ["履修", "凹凸", "321×321×0", "貯水池", "42÷7+36"];
+    const toi4mondai = Math.floor(Math.random() * toi4mondais.length);
+    const toi5mondais = ["富嶽三十六景", "本居宣長", "押印", "129×3", "100-□ = 42"];
+    const toi5mondai = Math.floor(Math.random() * toi5mondais.length);
+    const toi6mondais = ["糊代", "世阿弥", "山縣有朋", "77-43+□ = 51", "301+23-32"];
+    const toi6mondai = Math.floor(Math.random() * toi6mondais.length);
+    const toi7mondais = ["蓮華", "直向き", "戒める", "五月蝿い", "姑"];
+    const toi7mondai = Math.floor(Math.random() * toi7mondais.length);
+    const toi8mondais = ["頸椎", "罵詈雑言", "水飛沫", "骨粗鬆症", "高嶺"];
+    const toi8mondai = Math.floor(Math.random() * toi8mondais.length);
+    const toi9mondais = ["菖蒲", "気障", "解ける", "下拵え", "拗ねる"];
+    const toi9mondai = Math.floor(Math.random() * toi9mondais.length);
+    const toi10mondais = ["偶に", "漱", "草臥れる", "纏める", "僻む"];
+    const toi10mondai = Math.floor(Math.random() * toi10mondais.length);
+    function kaito1() {
+        let mondai = document.getElementById("mondai");
+        mondai.innerText = toi1mondais[toi1mondai];
+        mondai.style.display = "block";
+        let answer = document.getElementById('answer1')
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi1mondai === 0) {
+                if (answer.value === "あんごう") {
+                    console.log(answer.value)
+                    answer.value = "";
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se1.play()
+                    timerstop();
+                } else if (answer.value !== "あんごう") {
+                    hu.play()
+                    answer.value = "";
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi1mondai === 1) {
+                if (answer.value === "22") {
+                    console.log(answer.value)
+                    answer.value = "";
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se1.play()
+                    timerstop();
+                } else if (answer.value !== "22") {
+                    hu.play()
+                    answer.value = "";
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi1mondai === 2) {
+                if (answer.value === "けいてき") {
+                    console.log(answer.value)
+                    answer.value = "";
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se1.play()
+                    timerstop();
+                } else if (answer.value !== "けいてき") {
+                    hu.play()
+                    answer.value = "";
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi1mondai === 3) {
+                if (answer.value === "90") {
+                    console.log(answer.value)
+                    answer.value = "";
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se1.play()
+                    timerstop();
+                } else if (answer.value !== "90") {
+                    hu.play()
+                    answer.value = "";
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi1mondai === 4) {
+                if (answer.value === "のうり") {
+                    console.log(answer.value)
+                    answer.value = "";
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se1.play()
+                    timerstop();
+                } else if (answer.value !== "のうり") {
+                    hu.play()
+                    answer.value = "";
+                }
+            }
+        })
+    }
+    function kaito2() {
+        let mondai1 = document.getElementById("mondai");
+        mondai1.innerText = toi2mondais[toi2mondai];
+        mondai1 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer2')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi2mondai === 0 && seikaisu === 1) {
+                if (answer.value === "31") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se1.play()
+                    timerstop1();
+                } else if (answer.value !== 31) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi2mondai === 1 && seikaisu === 1) {
+                if (answer.value === "げんかん") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se1.play()
+                    timerstop1();
+                } else if (answer.value !== "げんかん") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi2mondai === 2 && seikaisu === 1) {
+                if (answer.value === "17") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se1.play()
+                    timerstop1();
+                } else if (answer.value !== 17) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi2mondai === 3 && seikaisu == 1) {
+                if (answer.value === "おちゃのみず") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se1.play()
+                    timerstop1();
+                } else if (answer.value !== "おちゃのみず") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi2mondai === 4 && seikaisu === 1) {
+                if (answer.value === "さつき") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se1.play()
+                    timerstop1();
+                } else if (answer.value !== "さつき") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+    function kaito3 () {
+        let mondai2 = document.getElementById("mondai");
+        mondai2.innerText = toi3mondais[toi3mondai];
+        mondai2 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer3')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi3mondai === 0 && seikaisu === 2) {
+                if (answer.value === "りんご") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se1.play()
+                    timerstop2();
+                } else if (answer.value !== "りんご") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi3mondai === 1 && seikaisu === 2) {
+                if (answer.value === "みなもとのよりとも") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se1.play()
+                    timerstop2();
+                } else if (answer.value !== "みなもとのよりとも") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi3mondai === 2 && seikaisu === 2) {
+                if (answer.value === "94") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se1.play()
+                    timerstop2();
+                } else if (answer.value !== 94) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi3mondai === 3 && seikaisu === 2) {
+                if (answer.value === "かばん") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se1.play()
+                    timerstop2();
+                } else if (answer.value !== "かばん") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi3mondai === 4 && seikaisu === 2) {
+                if (answer.value === "392") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se1.play()
+                    timerstop2();
+                } else if (answer.value !== 392) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+    function kaito4 () {
+        let mondai3 = document.getElementById("mondai");
+        mondai3.innerText = toi4mondais[toi4mondai];
+        mondai3 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer4')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi4mondai === 0 && seikaisu === 3) {
+                if (answer.value === "りしゅう") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se2.play()
+                    timerstop3();
+                } else if (answer.value !== "りしゅう") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi4mondai === 1 && seikaisu === 3) {
+                if (answer.value === "おうとつ") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop3();
+                } else if (answer.value !== "おうとつ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi4mondai === 2 && seikaisu === 3) {
+                if (answer.value === "0") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop3();
+                } else if (answer.value !== 0) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi4mondai === 3 && seikaisu === 3) {
+                if (answer.value === "ちょすいち") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop3();
+                } else if (answer.value !== "ちょすいち") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi4mondai === 4 && seikaisu === 3) {
+                if (answer.value === "42") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop3();
+                } else if (answer.value !== 42) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+    function kaito5 () {
+        let mondai4 = document.getElementById("mondai");
+        mondai4.innerText = toi5mondais[toi5mondai];
+        mondai4 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer5')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi5mondai === 0 && seikaisu === 4) {
+                if (answer.value === "ふがくさんじゅうろっけい") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se2.play()
+                    timerstop4();
+                } else if (answer.value !== "ふがくさんじゅうろっけい") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi5mondai === 1 && seikaisu === 4) {
+                if (answer.value === "もとおりのりなが") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop4();
+                } else if (answer.value !== "もとおりのりなが") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi5mondai === 2 && seikaisu === 4) {
+                if (answer.value === "おういん") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop4();
+                } else if (answer.value !== "おういん") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi5mondai === 3 && seikaisu === 4) {
+                if (answer.value === "387") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop4();
+                } else if (answer.value !== 387) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi5mondai === 4 && seikaisu === 4) {
+                if (answer.value === "58") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop4();
+                } else if (answer.value !== 58) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+    function kaito6 () {
+        let mondai5 = document.getElementById("mondai");
+        mondai5.innerText = toi6mondais[toi6mondai];
+        mondai5 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer6')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi6mondai === 0 && seikaisu === 5) {
+                if (answer.value === "のりしろ") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se2.play()
+                    timerstop5();
+                } else if (answer.value !== "のりしろ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi6mondai === 1 && seikaisu === 5) {
+                if (answer.value === "ぜあみ") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop5();
+                } else if (answer.value !== "ぜあみ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi6mondai === 2 && seikaisu === 5) {
+                if (answer.value === "やまがたありとも") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop5();
+                } else if (answer.value !== "やまがたありとも") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi6mondai === 3 && seikaisu === 5) {
+                if (answer.value === "17") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop5();
+                } else if (answer.value !== 17) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi6mondai === 4 && seikaisu === 5) {
+                if (answer.value === "292") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop5();
+                } else if (answer.value !== 292) {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+    function kaito7 () {
+        let mondai6 = document.getElementById("mondai");
+        mondai6.innerText = toi7mondais[toi7mondai];
+        mondai6 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer7')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi7mondai === 0 && seikaisu === 6) {
+                if (answer.value === "れんげ") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se2.play()
+                    timerstop6();
+                } else if (answer.value !== "れんげ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi7mondai === 1 && seikaisu === 6) {
+                if (answer.value === "ひたむ") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop6();
+                } else if (answer.value !== "ひたむ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi7mondai === 2 && seikaisu === 6) {
+                if (answer.value === "いまし") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop6();
+                } else if (answer.value !== "いまし") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi7mondai === 3 && seikaisu === 6) {
+                if (answer.value === "うるさ") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop6();
+                } else if (answer.value !== "うるさ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi7mondai === 4 && seikaisu === 6) {
+                if (answer.value === "しゅうとめ") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop6();
+                } else if (answer.value !== "しゅうとめ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+    function kaito8 () {
+        let mondai7 = document.getElementById("mondai");
+        mondai7.innerText = toi8mondais[toi8mondai];
+        mondai7 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer8')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi8mondai === 0 && seikaisu === 7) {
+                if (answer.value === "けいつい") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se2.play()
+                    timerstop7();
+                } else if (answer.value !== "けいつい") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi8mondai === 1 && seikaisu === 7) {
+                if (answer.value === "ばりぞうごん") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop7();
+                } else if (answer.value !== "ばりぞうごん") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi8mondai === 2 && seikaisu === 7) {
+                if (answer.value === "みずしぶき") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop7();
+                } else if (answer.value !== "みずしぶき") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi8mondai === 3 && seikaisu === 7) {
+                if (answer.value === "こつそしょうしょう") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop7();
+                } else if (answer.value !== "こつそしょうしょう") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi8mondai === 4 && seikaisu === 7) {
+                if (answer.value === "たかね") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop7();
+                } else if (answer.value !== "たかね") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+    function kaito9 () {
+        let mondai8 = document.getElementById("mondai");
+        mondai8.innerText = toi9mondais[toi9mondai];
+        mondai8 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer9')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi9mondai === 0 && seikaisu === 8) {
+                if (answer.value === "しょうぶ" || "あやめ") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se2.play()
+                    timerstop8();
+                } else if (answer.value !== "しょうぶ" || "あやめ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi9mondai === 1 && seikaisu === 8) {
+                if (answer.value === "きざ") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop8();
+                } else if (answer.value !== "きざ") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi9mondai === 2 && seikaisu === 8) {
+                if (answer.value === "ほど") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop8();
+                } else if (answer.value !== "ほど") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi9mondai === 3 && seikaisu === 8) {
+                if (answer.value === "したごしら") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop8();
+                } else if (answer.value !== "したごしら") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi9mondai === 4 && seikaisu === 8) {
+                if (answer.value === "す") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop8();
+                } else if (answer.value !== "す") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+    function kaito10 () {
+        let mondai9 = document.getElementById("mondai");
+        mondai9.innerText = toi10mondais[toi10mondai];
+        mondai9 = document.getElementById("mondai").style.display = "block";
+        let answer = document.getElementById('answer10')
+        answer.style.display = "block"
+        document.addEventListener('keydown', (event) => {
+            if (event.keyCode === 13 && answer.value !== "" && toi10mondai === 0 && seikaisu === 9) {
+                if (answer.value === "たま") {
+                    answer.value = ""
+                    mondai.style.display = "none";
+                    answer.style.display = "none";
+                    se2.play()
+                    timerstop9();
+                } else if (answer.value !== "たま") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi10mondai === 1 && seikaisu === 9) {
+                if (answer.value === "うがい") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop9();
+                } else if (answer.value !== "うがい") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi10mondai === 2 && seikaisu === 9) {
+                if (answer.value === "くたび") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop9();
+                } else if (answer.value !== "くたび") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi10mondai === 3 && seikaisu === 9) {
+                if (answer.value === "まと") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop9();
+                } else if (answer.value !== "まと") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+            if (event.keyCode === 13 && answer.value !== "" && toi10mondai === 4 && seikaisu === 9) {
+                if (answer.value === "ひが") {
+                    answer.value = ""
+                    mondai.style.display = "none"
+                    answer.style.display = "none"
+                    se2.play()
+                    timerstop9();
+                } else if (answer.value !== "ひが") {
+                    hu.play()
+                    answer.value = ""
+                }
+            }
+        })
+    }
+
+</script>
+
+</html>
