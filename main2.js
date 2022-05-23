@@ -126,7 +126,7 @@ function LevelDelete() {
         }
         if (seigenjikan === 0) {
             sinkaiBGM.pause();
-            alert("GAMEOVER");
+            alert("GAMEOVER　0ポイント");
             clearInterval(timer1);
             document.location.reload();
         }
@@ -186,7 +186,7 @@ function toi2hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　10ポイント");
         clearInterval(timer1);
         document.location.reload();
     }
@@ -243,7 +243,7 @@ function toi3hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　20ポイント");
         clearInterval(timer2);
         document.location.reload();
     }
@@ -320,7 +320,7 @@ function toi4hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　30ポイント");
         clearInterval(timer3);
         document.location.reload();
     }
@@ -380,7 +380,7 @@ function toi5hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　40ポイント");
         clearInterval(timer4);
         document.location.reload();
     }
@@ -440,7 +440,7 @@ function toi6hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　50ポイント");
         clearInterval(timer5);
         document.location.reload();
     }
@@ -519,7 +519,7 @@ function toi7hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　60ポイント");
         clearInterval(timer6);
         document.location.reload();
     }
@@ -579,7 +579,7 @@ function toi8hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　70ポイント");
         clearInterval(timer7);
         document.location.reload();
     }
@@ -639,7 +639,7 @@ function toi9hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　80ポイント");
         clearInterval(timer8);
         document.location.reload();
     }
@@ -717,7 +717,7 @@ function toi10hajime() {
     }
     if (seigenjikan === 0) {
         sinkaiBGM.pause();
-        alert("GAMEOVER");
+        alert("GAMEOVER　90ポイント");
         clearInterval(timer9);
         document.location.reload();
     }
